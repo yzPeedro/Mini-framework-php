@@ -42,6 +42,24 @@ class RouterCore
                 if ( is_callable($r['execute']) ) {
                     $r['execute']();
                     break;
+                } else {
+                    $r = explode("@", $r['execute']);
+                    $controller = $r[0];
+                    $method = $r[1];
+                    if ( file_exists("../app/http/controller/$controller.php") ) {
+                        require_once("../app/http/controller/$controller.php");
+                        if ( method_exists($controller, $method) ) {
+                            $app = new $controller();
+                            $app->$method();
+                            break;
+                        } else {
+                            dd("Classe ou método não encontrado");
+                            break;
+                        }
+                    } else {
+                        dd("Arquivo de controller não encontrado");
+                        break;
+                    }
                 }
             }elseif( $r == end($this->routes) ) {
                 http_response_code(404);
