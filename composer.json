@@ -1,0 +1,16 @@
+{
+    "name": "yzpeedro/mini-framework-php",
+    "description": "Mini framework desenvolvido em PHP utilizando MVC",
+    "authors": [
+        {
+            "name": "yzPeedro",
+            "email": "pedrocruzpessoa16@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload":{
+        "psr-4": {
+            "app\\": "app/"
+        }
+    }
+}
