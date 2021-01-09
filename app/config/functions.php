@@ -1,5 +1,9 @@
 <?php
 
+/*
+    GLOBAL FUNCTIONS
+*/
+
 function dd( $dump, bool $die = true ) 
 {
     echo "<pre>";

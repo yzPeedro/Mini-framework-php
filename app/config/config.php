@@ -1,5 +1,6 @@
 <?php
 
+#CONST
 define("PATH", "/");
 
 #DEPENDENCIES

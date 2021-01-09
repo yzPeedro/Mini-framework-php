@@ -1,7 +1,8 @@
 <?php
 
-
-// Configure sua database!
+/*
+    CONFIGURE YOUR DATABASE
+*/
 define("DB_DSN", '');
 define("DB_HOST", '');
 define("DB_NAME", '');

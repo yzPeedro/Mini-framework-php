@@ -2,7 +2,7 @@
 
 use app\http\core\ModelCore;
 
-class TesteModel extends ModelCore
+class ExempleModel extends ModelCore
 {
     // 
 }
