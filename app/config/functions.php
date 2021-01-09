@@ -8,3 +8,12 @@ function dd( $dump, bool $die = true )
 
     if( $die ) die;
 }
+
+function bug( bool $bug )
+{
+    if ( $bug ) {
+        echo "Deu bom";
+    } else {
+        echo "Deu b.o aí mano";
+    }
+}

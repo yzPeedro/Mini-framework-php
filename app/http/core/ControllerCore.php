@@ -1,8 +1,9 @@
 <?php
 
 namespace app\http\core;
+use app\http\core\ModelCore;
 
-class ControllerCore
+class ControllerCore extends ModelCore
 {
     public function render($view, $params = [], $ext = '.php')
     {

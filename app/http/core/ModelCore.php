@@ -1,8 +1,16 @@
 <?php
 
 namespace app\http\core;
+use PDO;
 
-class Model
+class ModelCore
 {
-    // 
+    protected function connection()
+    {
+       try { 
+            $pdo = new PDO( DB_DSN . ':dbname=' . DB_NAME . ';host=' . DB_HOST, DB_USER, DB_PASS );
+       } catch ( PDOExecption $e ) {
+            dd($e->getMessage());
+       }
+    }
 }
