@@ -9,6 +9,7 @@ class ModelCore
     {
        try { 
             $pdo = new PDO( DB_DSN . ':dbname=' . DB_NAME . ';host=' . DB_HOST, DB_USER, DB_PASS );
+            return $pdo;
        } catch ( PDOExecption $e ) {
             dd($e->getMessage());
        }

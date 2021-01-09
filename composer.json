@@ -12,5 +12,8 @@
         "psr-4": {
             "app\\": "app/"
         }
+    },
+    "scripts": {
+        "server": "php -S localhost:8080 -t public"
     }
 }
