@@ -6,6 +6,12 @@ class HomeController extends ControllerCore
 {
     public function index()
     {
-        $this->render("HomeView", ['nome' => 'Pedro'], '.html');
+        /*
+        #   To render an view you can use:
+        #
+        #   $this->render( view_name, parameters, extension(default = php) )
+        #
+        */
+        $this->render("HomeView", ['create_by' => 'https://github.com/yzPeedro'], '.php');
     }
 }

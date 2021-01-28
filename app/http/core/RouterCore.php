@@ -88,7 +88,7 @@ class RouterCore
                 } else {
                     $r = explode("@", $r['execute']);
                     $controller = $r[0];
-                    $method = $r[1];
+                    $method = $r[1];                    
                     if ( file_exists("../app/http/controller/$controller.php") ) {
                         require_once("../app/http/controller/$controller.php");
                         if ( method_exists($controller, $method) ) {
