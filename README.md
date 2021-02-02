@@ -54,7 +54,7 @@ $this->get('/', "HomeController@index");
 ```
 <br/>
 In the first example, you find a method called GET being used by the "$this" instance, but what does that mean? well, you must remember that right above we show you a table in which you represent the two methods of creating routes used in our project, in this case, we can see the GET route being used, right after that, you can see that it is being used as a second parameter an function, this function represents what we want the site to do when the user accesses the "/" route that we passed as the first parameter, if you use these settings, when entering your site, the user will see how the route main message ("/") a reply message ("Hello World").
-<br/> 
+<br/><br/>
 In the second example, we can see something completely different, in this second example we use a Controller to manage our functions for the "/" route, so that you can understand how this works, read the article below
 
 ## Controllers
