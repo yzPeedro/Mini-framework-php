@@ -63,15 +63,18 @@ class RouterCore
                             $app->$method( $params );
                             break;
                         } else {
-                            dd("Classe ou método não encontrado");
+                            require_once("../app/view/viewHTTP/404.html");
+                            http_response_code(404);
                             break;
                         }
                     } else {
-                        dd("Arquivo de controller não encontrado");
+                        require_once("../app/view/viewHTTP/404.html");
+                        http_response_code(404);
                         break;
                     }
                 
             }elseif( $r == end($this->routes) ) {
+                require_once("../app/view/viewHTTP/404.html");
                 http_response_code(404);
                 die;
             }
@@ -96,15 +99,18 @@ class RouterCore
                             $app->$method();
                             break;
                         } else {
-                            dd("Classe ou método não encontrado");
+                            require_once("../app/view/viewHTTP/404.html");
+                            http_response_code(404);
                             break;
                         }
                     } else {
-                        dd("Arquivo de controller não encontrado");
-                        break;
+                        require_once("../app/view/viewHTTP/404.html");
+                            http_response_code(404);
+                            break;
                     }
                 }
             }elseif( $r == end($this->routes) ) {
+                require_once("../app/view/viewHTTP/404.html");
                 http_response_code(404);
                 die;
             }
