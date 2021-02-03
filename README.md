@@ -57,7 +57,70 @@ In the first example, you find a method called GET being used by the "$this" ins
 <br/><br/>
 In the second example, we can see something completely different, in this second example we use a Controller to manage our functions for the "/" route, so that you can understand how this works, read the article below
 
+
+
 ## Controllers
 
-(coming soon)
+A Controller is a class within a PHP file that you build several functions that can be executed for your route, our mini-framework makes this instance and method call automatically, so that you can call your class and functions, you must follow a pattern, in the web.php file, this pattern has been presented to you before:
 
+```php
+$this->get('/', "MyClass@MyMethod");
+```
+
+Note that as a second parameter we pass a string, in which we first choose which class we will use, separating it with an "@" we choose the method.
+
+<br/>
+
+> You can only use methods that are within the class being specified in the context, if you want to use methods from another class, you can either extend that class or use it within the context
+
+### Creating Controllers and methods
+
+
+For you to create your own Controllers files and your own methods you must follow a simple pattern.
+
+- Create files using CamelCase using "Controller" as a suffix, for example "MyFileController.php", remember to create your controller at:
+
+```
+/app/http/controller/
+```
+- In order to create methods using the mini-framework's "render" function, you must extend another class class:
+
+```php
+<?php
+
+use app\http\core\ControllerCore;
+
+class MyController extends ControllerCore
+{
+	public function index()
+	{
+		$this->render("MyView", $MyParams);
+	}
+}
+```
+
+## Models
+
+To configure your models just access the file
+
+```
+app/model/database.example.php
+```
+<br/>
+
+> Remember to remove the ".exemple" from the file name, we use this pattern so that you can configure the database only in a local context and that your database settings are not sent to external repositories, thus maintaining the security of your login passwords
+
+<br/>
+To create Models you must follow the pattern below
+<br/><br/>
+
+```php
+<?php
+
+use app\http\core\ModelCore;
+
+class ExempleModel extends ModelCore
+{
+    // 
+}
+```
