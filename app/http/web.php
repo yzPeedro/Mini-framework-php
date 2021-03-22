@@ -16,6 +16,4 @@
 
 */
 
-$this->get('/', function(){
-    echo "hello";
-});
+$this->get('/', "HomeController@index");
