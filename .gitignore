@@ -1,3 +1,4 @@
-/app/config/database.php
+/config/database.php
 /vendor/
 composer.lock
+.idea

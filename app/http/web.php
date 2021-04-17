@@ -1,4 +1,7 @@
 <?php
+
+namespace app\config;
+
 /*
     #############################################
     CREATE YOUR ROUTES BELOW

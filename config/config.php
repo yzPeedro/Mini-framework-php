@@ -1,10 +1,9 @@
 <?php
 
-/*
-    GLOBAL FUNCTIONS
-*/
+#CONST
+define("PATH", "/");
 
-function dd( $dump, bool $die = true ) 
+function dd( $dump, bool $die = true )
 {
     echo "<pre>";
     print_r($dump);
@@ -18,6 +17,6 @@ function bug( bool $bug )
     if ( $bug ) {
         echo "Deu bom";
     } else {
-        echo "Deu b.o aí mano";
+        echo "Deu b.o aí man";
     }
 }
