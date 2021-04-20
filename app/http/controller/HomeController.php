@@ -1,7 +1,7 @@
 <?php
-use app\http\core\ControllerCore;
+use app\http\core\ControllerCore as DB;
 
-class HomeController extends ControllerCore
+class HomeController extends DB
 {
     public function index()
     {

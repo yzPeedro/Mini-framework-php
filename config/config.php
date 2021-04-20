@@ -12,11 +12,25 @@ function dd( $dump, bool $die = true )
     if( $die ) die;
 }
 
+function responseJson($toJson, bool $die = true)
+{
+    echo "<pre>";
+    print_r(json_encode($toJson));
+    echo "</pre>";
+
+    if( $die ) die;
+}
+
+function returnJson($toJson)
+{
+    return json_encode($toJson);
+}
+
 function bug( bool $bug )
 {
     if ( $bug ) {
-        echo "Deu bom";
+        echo "Working!!";
     } else {
-        echo "Deu b.o aí man";
+        echo "Fail.";
     }
 }
