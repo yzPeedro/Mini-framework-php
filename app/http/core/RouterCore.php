@@ -17,7 +17,7 @@ class RouterCore
 
     private function prepare()
     {
-        $this->uri = str_replace("/public", '', $_SERVER['REDIRECT_URL']);
+        $this->uri = explode("?", $_SERVER['REQUEST_URI'])[0];
         $this->method = $_SERVER['REQUEST_METHOD'];        
     }
 
