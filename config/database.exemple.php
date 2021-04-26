@@ -1,10 +1,10 @@
 <?php
 
 /*
-*   CONFIGURE YOUR DATABASE
+*    CONFIGURE YOUR DATABASE
 */
-define("DB_DSN", '');
-define("DB_HOST", '');
-define("DB_NAME", '');
-define("DB_USER", '');
-define("DB_PASS", '');
+define("DB_DSN", 'mysql');
+define("DB_HOST", 'localhost');
+define("DB_NAME", 'helper');
+define("DB_USER", 'root');
+define("DB_PASS", 'root');

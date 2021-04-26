@@ -64,4 +64,14 @@ class ModelCore
         }
     }
 
+    protected function deleteFrom(string $table, string $condition): bool
+    {
+        $sql = "DELETE FROM $table WHERE $condition";
+        $return = $this->con->prepare($sql);
+        if($return->execute()){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
