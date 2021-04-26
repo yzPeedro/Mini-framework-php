@@ -12,5 +12,6 @@ class ControllerCore extends ModelCore
 //        die;
 
         $this->connect();
+        responseJson($this->select("tb_miniframework", '*'));
     }
 }

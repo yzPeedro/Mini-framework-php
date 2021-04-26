@@ -92,6 +92,6 @@ class ModelCore
         $sql = "SELECT $condition FROM $table";
         $return = $this->con->query($sql);
 
-        return array_unique($return->fetch());
+        return $return->fetchAll();
     }
 }
