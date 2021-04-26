@@ -74,4 +74,24 @@ class ModelCore
             return false;
         }
     }
+
+    protected function update(string $table, string $set, string $condition): bool
+    {
+        $sql = "UPDATE $table SET $set WHERE $condition";
+        $return = $this->con->prepare($sql);
+
+        if($return->execute()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    protected function select(string $table, string $condition = "*"): array
+    {
+        $sql = "SELECT $condition FROM $table";
+        $return = $this->con->query($sql);
+
+        return array_unique($return->fetch());
+    }
 }
