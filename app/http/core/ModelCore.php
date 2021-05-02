@@ -1,6 +1,7 @@
 <?php
 
 namespace app\http\core;
+use app\http\core\ResponseCore as Response;
 use PDO;
 use PDOException;
 
@@ -13,7 +14,7 @@ class ModelCore
         try {
             $this->con = new PDO( DB_DSN . ':dbname=' . DB_NAME . ';host=' . DB_HOST, DB_USER, DB_PASS );
         } catch( PDOException $e) {
-            responseJson(["error" => true, "Message" => $e->getMessage()]);
+            Response::json(["error" => true, "Message" => $e->getMessage()]);
         }
     }
 
@@ -60,7 +61,7 @@ class ModelCore
 
             return true;
         } else {
-            responseJson(["error" => true, "Message" => "Please, connect your Database before insert"]);
+            Response::json(["error" => true, "Message" => "Please, connect your Database before insert"]);
         }
     }
 
