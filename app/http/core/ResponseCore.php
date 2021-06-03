@@ -6,12 +6,12 @@ use Exception;
 
 class ResponseCore
 {
-    public static function json($var): string
+    public function json($var)
     {
         try {
-            return print_r(json_encode($var));
+            return dd(json_encode($var));
         } catch(Exception $e) {
-            return print_r(json_encode($e->getMessage()));
+            return dd(json_encode($e->getMessage()));
         }
     }
 }
