@@ -9,6 +9,6 @@ class HomeController extends DB
 {
     public function index()
     {
-        $this->render("HomeView", ['create_by' => "https://pedropessoa.000webhostapp.com/"]);
+        $this->render("../app/view", "HomeView.php", ["created_by" => "https://github.com/yzPeedro"]);
     }
 }

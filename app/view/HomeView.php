@@ -20,7 +20,7 @@
             text-align: center;
             font-family: 'Merriweather Sans', sans-serif;
         }
- 
+
         p{
             font-size: 12px;
         }
@@ -36,15 +36,9 @@
     </style>
 </head>
 <body>
-    <!-- 
-        #
-        # $view_param[]
-        #
-    -->
-
     <div id="main">
         <h1>Welcome to Main Page!</h1>
-        <span>This <b>Mini-Framework</b> was created by <a target="_blank" href="<?= $view_param['create_by'] ?>">Pedro Pessoa</a></span>
+        <span>This <b>Mini-Framework</b> was created by <a target="_blank" href="{{ created_by }}">Pedro Pessoa</a></span>
         <p>
             This project is open source, so you can collaborate <a href="https://github.com/yzPeedro/Mini-framework-php">here</a>
             <br><br>
