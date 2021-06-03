@@ -26,6 +26,6 @@ class RequestCore
     */
     public function post($index = '')
     {
-        return (isset($_POST[$index])) ? $_POST[$index] : $_POST;
+        return (isset($_REQUEST["POST"][$index])) ? $_REQUEST["POST"][$index] : $_REQUEST["POST"];
     }
 }
