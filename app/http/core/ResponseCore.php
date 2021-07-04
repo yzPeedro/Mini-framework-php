@@ -6,6 +6,11 @@ use Exception;
 
 class ResponseCore
 {
+    /**
+     * Return a json response
+     *
+     * @param $var
+     */
     public function json($var)
     {
         try {

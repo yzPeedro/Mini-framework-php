@@ -1,7 +1,7 @@
 <?php
 
 #CONST
-define("PATH", "/");
+const PATH = "/";
 
 function dd( $dump, bool $die = true )
 {

@@ -1,6 +1,7 @@
-<?php /** @noinspection ALL */
+<?php
 
 namespace app\http\core;
+
 use app\http\core\ModelCore;
 use app\http\core\RequestCore as Request;
 use app\http\core\ResponseCore as Response;

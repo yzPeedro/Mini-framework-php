@@ -7,17 +7,28 @@ use PDOException;
 
 class ModelCore
 {
-    private $con;
+    /**
+     * @var Object
+     */
+    private Object $con;
 
+    /**
+     * Create a new database connection
+     */
     public function connect()
     {
         try {
             $this->con = new PDO( DB_DSN . ':dbname=' . DB_NAME . ';host=' . DB_HOST, DB_USER, DB_PASS );
         } catch( PDOException $e) {
-            Response::json(["error" => true, "Message" => $e->getMessage()]);
+            (new Response)->json(["error" => true, "Message" => $e->getMessage()]);
         }
     }
 
+    /**
+     * Test the database connection
+     *
+     * @return bool
+     */
     private function testConnection() : bool
     {
         if(!empty($this->con) && $this->con instanceof PDO) {
@@ -27,7 +38,14 @@ class ModelCore
         }
     }
 
-    protected function insertInto(array $tables = [], array $to_values = [])
+    /**
+     * Insert new data in database using model
+     *
+     * @param array $tables
+     * @param array $to_values
+     * @return bool
+     */
+    protected function insertInto(array $tables = [], array $to_values = []): bool
     {
         if($this->testConnection()) {
             foreach($tables as $table){
@@ -61,10 +79,18 @@ class ModelCore
 
             return true;
         } else {
-            Response::json(["error" => true, "Message" => "Please, connect your Database before insert"]);
+            (new Response)->json(["error" => true, "Message" => "Please, connect your Database before insert"]);
+            return false;
         }
     }
 
+    /**
+     * Delete data from database using model
+     *
+     * @param string $table
+     * @param string $condition
+     * @return bool
+     */
     protected function deleteFrom(string $table, string $condition): bool
     {
         $sql = "DELETE FROM $table WHERE $condition";
@@ -76,6 +102,14 @@ class ModelCore
         }
     }
 
+    /**
+     * Update data from database using model
+     *
+     * @param string $table
+     * @param string $set
+     * @param string $condition
+     * @return bool
+     */
     protected function update(string $table, string $set, string $condition): bool
     {
         $sql = "UPDATE $table SET $set WHERE $condition";
@@ -88,6 +122,13 @@ class ModelCore
         }
     }
 
+    /**
+     * Select unique or multiple data from database using Model
+     *
+     * @param string $table
+     * @param string $condition
+     * @return array
+     */
     protected function select(string $table, string $condition = "*"): array
     {
         $sql = "SELECT $condition FROM $table";
