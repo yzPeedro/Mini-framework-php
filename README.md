@@ -1,5 +1,5 @@
 
-# Mini-Framwork
+# Mini-Framework
 
   
 
@@ -76,14 +76,14 @@ Note that as a second parameter we pass a string, in which we first choose which
 ### Creating Controllers and methods
 
 
-For you to create your own Controllers files and your own methods you must follow a simple pattern.
+For you to create your own Controllers files your own methods you must follow a simple pattern.
 
 - Create files using CamelCase using "Controller" as a suffix, for example "MyFileController.php", remember to create your controller at:
 
 ```
 /app/http/controller/
 ```
-- In order to create methods using the mini-framework's "render" function, you must extend another class class:
+- In order to create methods using the mini-framework's "render" function, you must extend another class:
 
 ```php
 <?php
@@ -94,7 +94,7 @@ class MyController extends ControllerCore
 {
 	public function index()
 	{
-		$this->render("MyView", $MyParams);
+		$this->render("MyView", $MyArray);
 	}
 }
 ```
@@ -108,7 +108,7 @@ app/model/database.example.php
 ```
 <br/>
 
-> Remember to remove the ".exemple" from the file name, we use this pattern so that you can configure the database only in a local context and that your database settings are not sent to external repositories, thus maintaining the security of your login passwords
+> Remember to remove the ".example" from the file name, we use this pattern so that you can configure the database only in a local context and that your database settings are not sent to external repositories, thus maintaining the security of your login passwords
 
 <br/>
 To create Models you must follow the pattern below
@@ -119,8 +119,27 @@ To create Models you must follow the pattern below
 
 use app\http\core\ModelCore;
 
-class ExempleModel extends ModelCore
+class ExampleModel extends ModelCore
 {
     // 
 }
 ```
+
+The Models will be used to calculate and validate data before use it
+in your query, this framework use PDO to save and read data from your
+table, follow below to functions example from ModelCore 
+
+
+```php
+# Get Model Core
+$modelCore = new \app\http\core\ModelCore;
+
+# Connect your application to database
+$modelCore->connect();
+
+/**
+ * You can see more functions to INSERT, SELECT, DELETE and UPDATE
+ * in file /app/http/core/ModelCore.php 
+ */
+```
+
