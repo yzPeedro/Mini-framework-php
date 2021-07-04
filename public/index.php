@@ -22,7 +22,7 @@ require_once("../config/config.php");
  * database
  * ===================================
  */
-require_once("../config/database.exemple.php");
+require_once("../config/database.example.php");
 
 /**
  * ===================================
